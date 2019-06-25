@@ -366,3 +366,23 @@ static String timeConversion(String s) {
         return page1<page2?page1:page2;
 
     }
+    
+    
+ //Electronics Shop
+ 
+  /*
+     * Complete the getMoneySpent function below.
+     */
+    static int getMoneySpent(int[] keyboards, int[] drives, int b) {
+        int money =-1;
+        for(int i=0;i<keyboards.length;i++){
+            for(int j=0;j<drives.length;j++){
+                int sum =keyboards[i]+drives[j];
+                if(sum<=b && sum>money){
+                    money =sum;
+                }
+            }
+        }
+        return money;
+
+    }
