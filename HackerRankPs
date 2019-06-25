@@ -450,3 +450,62 @@ static String timeConversion(String s) {
         return count[count.length-1];
     }
 
+
+ // Complete the climbingLeaderboard function below.
+    static int[] climbingLeaderboard(int[] scores, int[] alice) {
+    int[] array = of(scores).distinct().toArray();
+    int i = array.length-1;
+    int [] res = new int[alice.length];
+    int c=0;
+    for(int score: alice) {
+        while(i>=0) {
+            if(score>=array[i]) 
+                i--;
+            else {
+                res[c]=i+2;
+                c++;
+                break;
+            }
+        }
+        if(i<0){
+            res[c]=1;
+            c++;
+        }
+    }
+
+    return res;
+
+    }
+    
+    
+  // Complete the hurdleRace function below.
+    static int hurdleRace(int k, int[] height) {
+        int max =0;
+        for(int i=0;i<height.length;i++){
+            if(k<=height[i] && height[i]-k>=max){
+                max=height[i]-k;
+            }
+        }
+        return max;
+
+
+    }
+    
+    
+    
+   // Complete the designerPdfViewer function below.
+    static int designerPdfViewer(int[] h, String word) {
+        int length = word.length();
+       // String[] str = word.split("");
+        int max =0;
+        for(int i =0;i<word.length();i++){
+            char ch = word.charAt(i);
+            int ascii = (int) ch;
+            int alp = ascii-97;
+            if(h[alp]>max){
+                max = h[alp];
+            }
+        }
+        int results = max * length;
+        return results;
+    }
