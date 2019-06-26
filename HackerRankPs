@@ -526,3 +526,40 @@ static String timeConversion(String s) {
         return sum;
 
     }
+    
+    // Complete the angryProfessor function below.
+    static String angryProfessor(int k, int[] a) {
+        int count =0;
+        String res = "";
+        for(int i=0;i<a.length;i++){
+            if(a[i]<=0){
+                count++;
+            }
+        }
+        if(count<k){
+            res="YES";
+        }else{
+            res="NO";
+        }
+        return res;
+
+    }
+    
+     // Complete the beautifulDays function below.
+    static int beautifulDays(int i, int j, int k) {
+        int cnt=0;
+        for(int p=i;p<=j;p++) {
+            int tmp=p,r=0;
+            while(tmp>0) {
+                 r=r*10+tmp%10;
+                  tmp/=10;
+            }
+            if(((p-r)%k)==0) {
+                cnt+=1;
+                }
+            }
+            //System.out.println(cnt);
+            return cnt;
+
+    }
+
